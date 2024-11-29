@@ -2,6 +2,7 @@ from enum import Enum, auto, Flag
 
 
 class PowerType(Enum):
+    """Enumeration of the different types of powers a bird can have."""
     WHEN_PLAYED = auto()
     WHEN_ACTIVATED = auto()
     ONCE_BETWEEN_TURNS = auto()
@@ -10,6 +11,7 @@ class PowerType(Enum):
 
 
 class NestType(Enum):
+    """Enumeration of the different types of nests birds can have."""
     PLATFORM = auto()
     BOWL = auto()
     CAVITY = auto()
@@ -18,6 +20,7 @@ class NestType(Enum):
 
 
 class Location(Flag):
+    """Flag enumeration of the various geographic locations."""
     NORTH_AMERICA = auto()
     SOUTH_AMERICA = auto()
     EUROPE = auto()
@@ -28,12 +31,14 @@ class Location(Flag):
    
    
 class Habitat(Flag):
+    """Flag enumeration of the different types of habitats."""
     FOREST = auto()
     GRASSLANDS = auto()
     WETLANDS = auto()
 
 
 class Food(Enum):
+    """Enumeration of the different types of food a bird can eat."""
     WILD = auto()
     SEED = auto()
     FISH = auto()
