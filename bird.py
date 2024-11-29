@@ -9,6 +9,7 @@ class Bird:
                  habitats: Habitat,
                  nest_type: NestType,
                  power_type: PowerType,
+                 power_func: callable,
                  power_text: str,
                  food_cost: dict[Food, int],
                  scientific_name: str | None = None,
@@ -21,6 +22,7 @@ class Bird:
         self.num_eggs: int = 0
         self.habitats: Habitat = habitats
         self.power_type: PowerType = power_type
+        self.use_power = power_func
         self.power_text: str = power_text
         self.nest_type: NestType = nest_type
         self.food_cost: dict[Food, int] = food_cost
