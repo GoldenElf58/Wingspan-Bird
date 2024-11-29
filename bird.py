@@ -27,4 +27,23 @@ class Bird:
         self.scientific_name = scientific_name
         self.fun_fact: str | None = fun_fact
         self.location: Location | None = location
-        
+    
+    def __repr__(self):
+        res = f'=== {self.name} ===\n'
+        res += f'Victory Points: {self.victory_points}\n'
+        res += f'Max Eggs: {self.max_eggs}\n'
+        res += f'Wingspan: {self.wingspan}\n'
+        res += f'Nest Type: {self.nest_type}\n'
+        res += f'Power Type: {self.power_type}\n'
+        res += f'Power Text: {self.power_text}\n'
+        res += f'Food Cost: {self.food_cost}\n'
+        if self.scientific_name is not None:
+            res += f'Scientific Name: {self.scientific_name}\n'
+        if self.fun_fact is not None:
+            res += f'Fun Fact: {self.fun_fact}\n'
+        if self.location is not None:
+            res += f'Location: {self.location}\n'
+        return res
+    
+    def __str__(self):
+        return self.__repr__()
