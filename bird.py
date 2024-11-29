@@ -19,6 +19,7 @@ class Bird:
     :param fun_fact: A fun fact about the bird species, or None.
     :param location: The location where the bird species can be found, or None.
     """
+    
     def __init__(self, name: str, *,
                  victory_points: int,
                  max_eggs: int,
@@ -63,6 +64,27 @@ class Bird:
         self.scientific_name: str | None = scientific_name
         self.fun_fact: str | None = fun_fact
         self.location: Location | None = location
+    
+    def can_add_eggs(self, num_eggs: int = 1) -> bool:
+        """
+        Check if the bird can add eggs.
+        
+        :param num_eggs: The number of eggs to add. Defaults to 1.
+        :return: True if the bird can add eggs, False otherwise.
+        """
+        return self.num_eggs + num_eggs <= self.max_eggs
+    
+    def add_eggs(self, num_eggs: int = 1) -> None:
+        """
+        Add eggs to the bird's nest.
+        
+        :param num_eggs: The number of eggs to add. Defaults to 1.
+        :raises ValueError: If the number of eggs to add would exceed the maximum number of eggs.
+        """
+        if not self.can_add_eggs(num_eggs):
+            raise ValueError(
+                f'Cannot add {num_eggs} eggs to {self.name}. Max eggs: {self.max_eggs} Current eggs: {self.num_eggs}')
+        self.num_eggs += num_eggs
     
     def __repr__(self):
         """
