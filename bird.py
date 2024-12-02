@@ -1,4 +1,5 @@
 from utils import *
+from power import Power
 
 
 class Bird:
@@ -26,9 +27,7 @@ class Bird:
                  wingspan: int,
                  habitats: Habitat,
                  nest_type: NestType,
-                 power_type: PowerType,
-                 power_func: callable,
-                 power_text: str,
+                 power: Power,
                  food_cost: dict[Food, int],
                  scientific_name: str | None = None,
                  fun_fact: str | None = None,
@@ -56,9 +55,7 @@ class Bird:
         self.wingspan: int = wingspan
         self.num_eggs: int = 0
         self.habitats: Habitat = habitats
-        self.power_type: PowerType = power_type
-        self.use_power = power_func
-        self.power_text: str = power_text
+        self.power: Power = power
         self.nest_type: NestType = nest_type
         self.food_cost: dict[Food, int] = food_cost
         self.scientific_name: str | None = scientific_name
@@ -100,8 +97,7 @@ class Bird:
         res += f'Max Eggs: {self.max_eggs}\n'
         res += f'Wingspan: {self.wingspan}\n'
         res += f'Nest Type: {self.nest_type}\n'
-        res += f'Power Type: {self.power_type}\n'
-        res += f'Power Text: {self.power_text}\n'
+        res += f'Power: {self.power}\n'
         res += f'Food Cost: {self.food_cost}\n'
         if self.scientific_name is not None:
             res += f'Scientific Name: {self.scientific_name}\n'

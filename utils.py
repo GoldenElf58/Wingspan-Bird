@@ -1,15 +1,6 @@
 from enum import Enum, auto, Flag
 
 
-class PowerType(Enum):
-    """Enumeration of the different types of powers a bird can have."""
-    WHEN_PLAYED = auto()
-    WHEN_ACTIVATED = auto()
-    ONCE_BETWEEN_TURNS = auto()
-    ROUND_END = auto()
-    GAME_END = auto()
-
-
 class NestType(Enum):
     """Enumeration of the different types of nests birds can have."""
     PLATFORM = auto()
